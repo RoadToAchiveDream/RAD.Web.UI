@@ -60,12 +60,12 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-dark py-5">
+              <CCard className="py-5">
                 <CCardBody className="text-center">
                   <div>
-                    <h2>Создать аккаунт</h2>
+                    <h1>Создать аккаунт</h1>
                     <p className='text-body-secondary'>
-                      Если у вас еще нет аккаунта, вы можете создать ее сейчас, Это займет несколько минут
+                      Если у вас еще нет аккаунта, вы можете создать ее сейчас. <span className='text-info'>Это займет несколько минут</span>
                     </p>
                     <Link to="/register">
                       <CButton color="dark" className="mt-3" active tabIndex={-1}>
