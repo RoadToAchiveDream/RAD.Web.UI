@@ -22,10 +22,8 @@ import ReactImg from 'src/assets/images/avatars/7.jpg'
 const User = () => {
   return (
     <>
-      <CCard className="col-lg-10 mb-4">
-        <CCardHeader>
-          <strong>Данные пользователя и Фото профиля</strong>
-        </CCardHeader>
+      <CCard className=" mb-4">
+        <CCardHeader>Данные пользователя</CCardHeader>
         <CCardBody>
           <CRow>
             <CCol lg="6" className="mb-4">
@@ -101,10 +99,8 @@ const User = () => {
           </CRow>
         </CCardBody>
       </CCard>
-      <CCard className="col-lg-10 mb-4">
-        <CCardHeader>
-          <strong>Управление аккаунтом</strong>
-        </CCardHeader>
+      <CCard className="mb-4">
+        <CCardHeader>Управление аккаунтом</CCardHeader>
         <CCardBody>
           <CForm className="row g-3">
             <div className="col-auto">
