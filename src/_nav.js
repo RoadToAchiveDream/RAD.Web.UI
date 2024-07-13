@@ -27,7 +27,7 @@ const _nav = [
   },
   {
     component: CNavTitle,
-    name: 'Трекер',
+    name: 'Трекер дисциплины',
   },
   {
     component: CNavGroup,
@@ -51,6 +51,83 @@ const _nav = [
         to: '/tasks',
       },
     ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Задачи',
+    to: '/tasks',
+    icon: <CIcon icon={cilTask} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Выполненные задачи',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Невыполненные задачи',
+        to: '/base/breadcrumbs',
+      },
+      {
+        component: CNavItem,
+        name: 'Все задачи',
+        to: '/tasks',
+      },
+    ],
+  },
+  {
+    component: CNavTitle,
+    name: 'Трекер расходов',
+  },
+  {
+    component: CNavGroup,
+    name: 'Задачи',
+    to: '/tasks',
+    icon: <CIcon icon={cilTask} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Выполненные задачи',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Невыполненные задачи',
+        to: '/base/breadcrumbs',
+      },
+      {
+        component: CNavItem,
+        name: 'Все задачи',
+        to: '/tasks',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Задачи',
+    to: '/tasks',
+    icon: <CIcon icon={cilTask} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Выполненные задачи',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Невыполненные задачи',
+        to: '/base/breadcrumbs',
+      },
+      {
+        component: CNavItem,
+        name: 'Все задачи',
+        to: '/tasks',
+      },
+    ],
+  },
+  {
+    component: CNavTitle,
+    name: 'Настройки',
   },
   {
     component: CNavItem,
