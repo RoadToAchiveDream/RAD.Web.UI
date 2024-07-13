@@ -19,21 +19,22 @@ import ReactImg from 'src/assets/images/avatars/9.jpg'
 const User = () => {
   return (
     <CCardGroup>
-      <CCard className="mb-4">
+      <div className='col-lg-4 m-1 mb-4'>
+      <CCard>
         <CCardHeader>
           <strong>Пользователь</strong>
         </CCardHeader>
         <CCardBody>
           <CForm>
             <CFormLabel>Имя</CFormLabel>
-            <CInputGroup className="mb-3">
+            <CInputGroup className="mb-1">
               <CInputGroupText>
                 <CIcon icon={cilText}></CIcon>
               </CInputGroupText>
               <CFormInput type="text" placeholder="Loading..." aria-label="" disabled readOnly />
             </CInputGroup>
             <CFormLabel>Фамилия</CFormLabel>
-            <CInputGroup className="mb-3">
+            <CInputGroup className="mb-1">
               <CInputGroupText>
                 <CIcon icon={cilText}></CIcon>
               </CInputGroupText>
@@ -46,7 +47,7 @@ const User = () => {
               />
             </CInputGroup>
             <CFormLabel>Адрес электронный почты</CFormLabel>
-            <CInputGroup className="mb-3">
+            <CInputGroup className="mb-1  ">
               <CInputGroupText>@</CInputGroupText>
               <CFormInput
                 type="text"
@@ -57,7 +58,7 @@ const User = () => {
               />
             </CInputGroup>
             <CFormLabel>Номер телефона</CFormLabel>
-            <CInputGroup className="mb-3">
+            <CInputGroup className="mb-1">
               <CInputGroupText>
                 <CIcon icon={cilPhone}></CIcon>
               </CInputGroupText>
@@ -72,15 +73,17 @@ const User = () => {
           </CForm>
         </CCardBody>
       </CCard>
-      <CCard className="mb-4">
+      </div>
+      <div className='col-lg-3 m-1 mb-4'>
+      <CCard>
         <CCardHeader>
           <strong>Фото профиля</strong>
         </CCardHeader>
         <CCardBody className="d-flex flex-column align-items-center">
           <CCardImage 
             src={ReactImg} 
-            className='m-1'
-            style={{ width: '250px', height: '250px', objectFit: 'cover', borderRadius: '50%' }} 
+            className='p-3 m-3'
+            style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '50%' }} 
           />
           <div className="mt-3 ">
             <CButton className="btn-primary m-1">Изменить</CButton>
@@ -88,6 +91,7 @@ const User = () => {
           </div>
         </CCardBody>
       </CCard>
+      </div>
     </CCardGroup>
   )
 }
