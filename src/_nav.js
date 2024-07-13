@@ -294,6 +294,11 @@ const _nav = [
       },
       {
         component: CNavItem,
+        name: 'Tasks',
+        to: '/tasks',
+      },
+      {
+        component: CNavItem,
         name: 'Error 404',
         to: '/404',
       },
