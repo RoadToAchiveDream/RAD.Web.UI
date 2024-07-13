@@ -60,6 +60,7 @@ const routes = [
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },
   { path: '/user', name: 'Пользователь', element: User },
+  { path: '/tasks', name: 'Задачи', element: Tasks },
 
   { path: '/base', name: 'Base', element: Cards, exact: true },
   { path: '/base/accordion', name: 'Accordion', element: Accordion },
