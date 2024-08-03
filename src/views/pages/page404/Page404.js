@@ -19,12 +19,11 @@ const Page404 = () => {
           <CCol md={6}>
             <div className="clearfix">
               <h1 className="float-start display-3 me-4">404</h1>
-              <h4 className="pt-3">Oops! You{"'"}re lost.</h4>
+              <h4 className="pt-3">Упс! Вы заблудились.</h4>
               <p className="text-body-secondary float-start">
-                The page you are looking for was not found.
+                Страница, которую вы ищете, не найдена.
               </p>
             </div>
-            
           </CCol>
         </CRow>
       </CContainer>

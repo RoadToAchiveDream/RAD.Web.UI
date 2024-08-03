@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {
@@ -35,11 +35,29 @@ const AppHeader = () => {
   const dispatch = useDispatch()
   const sidebarShow = useSelector((state) => state.sidebarShow)
 
+  // State to hold the current time
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString())
+
+  // Update time every second
   useEffect(() => {
-    document.addEventListener('scroll', () => {
-      headerRef.current &&
+    const timer = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString())
+    }, 1000)
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (headerRef.current) {
         headerRef.current.classList.toggle('shadow-sm', document.documentElement.scrollTop > 0)
-    })
+      }
+    }
+
+    document.addEventListener('scroll', handleScroll)
+
+    return () => document.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
@@ -52,32 +70,10 @@ const AppHeader = () => {
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
         <CHeaderNav className="d-none d-md-flex">
+          {/* Display real-time clock */}
           <CNavItem>
-            <CNavLink to="/dashboard" as={NavLink}>
-              Dashboard
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">Users</CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">Settings</CNavLink>
-          </CNavItem>
-        </CHeaderNav>
-        <CHeaderNav className="ms-auto">
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilBell} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilList} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilEnvelopeOpen} size="lg" />
+            <CNavLink>
+              {currentTime}
             </CNavLink>
           </CNavItem>
         </CHeaderNav>
@@ -103,7 +99,7 @@ const AppHeader = () => {
                 type="button"
                 onClick={() => setColorMode('light')}
               >
-                <CIcon className="me-2" icon={cilSun} size="lg" /> Light
+                <CIcon className="me-2" icon={cilSun} size="lg" /> Светлая
               </CDropdownItem>
               <CDropdownItem
                 active={colorMode === 'dark'}
@@ -112,7 +108,7 @@ const AppHeader = () => {
                 type="button"
                 onClick={() => setColorMode('dark')}
               >
-                <CIcon className="me-2" icon={cilMoon} size="lg" /> Dark
+                <CIcon className="me-2" icon={cilMoon} size="lg" /> Темная
               </CDropdownItem>
               <CDropdownItem
                 active={colorMode === 'auto'}
@@ -121,7 +117,7 @@ const AppHeader = () => {
                 type="button"
                 onClick={() => setColorMode('auto')}
               >
-                <CIcon className="me-2" icon={cilContrast} size="lg" /> Auto
+                <CIcon className="me-2" icon={cilContrast} size="lg" /> Авто
               </CDropdownItem>
             </CDropdownMenu>
           </CDropdown>

@@ -65,7 +65,7 @@ const Login = () => {
                   <div>
                     <h1>Создать аккаунт</h1>
                     <p className='text-body-secondary'>
-                      Если у вас еще нет аккаунта, вы можете создать ее сейчас. <span className='text-info'>Это займет несколько минут</span>
+                      Если у вас еще нет аккаунта, вы можете создать ее сейчас. Это займет несколько минут
                     </p>
                     <Link to="/register">
                       <CButton color="dark" className="mt-3" active tabIndex={-1}>
