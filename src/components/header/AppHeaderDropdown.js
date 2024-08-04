@@ -20,6 +20,7 @@ import {
   cilTask,
   cilUser,
   cilExitToApp,
+  cilPowerStandby,
 } from '@coreui/icons'
 import CIcon from '@coreui/icons-react'
 
@@ -43,7 +44,7 @@ const AppHeaderDropdown = () => {
         </CDropdownItem>
         <CDropdownDivider />
         <CDropdownItem href="#">
-          <CIcon icon={cilExitToApp} className="me-2" />
+          <CIcon icon={cilPowerStandby} className="me-2" />
           Выйти
         </CDropdownItem>
       </CDropdownMenu>

@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom'
 import routes from '../routes'
 
 import { CBreadcrumb, CBreadcrumbItem } from '@coreui/react'
+import CIcon from '@coreui/icons-react'
+import { cibQualcomm, cibUnrealEngine, cilApplications, cilAt, cilCommand, cilCommentSquare, cilDisabled, cilDollar, cilEqualizer, cilFindInPage, cilHome, cilLineStyle, cilMugTea, cilStar, cilTerminal, cilUser, cilWindow } from '@coreui/icons'
 
 const AppBreadcrumb = () => {
   const currentLocation = useLocation().pathname
@@ -33,7 +35,9 @@ const AppBreadcrumb = () => {
 
   return (
     <CBreadcrumb className="my-0">
-      <CBreadcrumbItem href="/">Домашняя страница</CBreadcrumbItem>
+      <CBreadcrumbItem href="/">
+      <CIcon icon={cilApplications}>
+        </CIcon></CBreadcrumbItem>
       {breadcrumbs.map((breadcrumb, index) => {
         return (
           <CBreadcrumbItem
