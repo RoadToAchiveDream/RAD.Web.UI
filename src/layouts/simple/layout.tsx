@@ -43,7 +43,7 @@ export function SimpleLayout({ sx, children, header, content }: SimpleLayoutProp
                 This is an info Alert.
               </Alert>
             ),
-            leftArea: <Logo />,
+            // leftArea: <Logo />,
             rightArea: (
               <Link
                 href="#"
@@ -51,7 +51,7 @@ export function SimpleLayout({ sx, children, header, content }: SimpleLayoutProp
                 color="inherit"
                 sx={{ typography: 'subtitle2' }}
               >
-                Need help?
+                Нужна помощь?
               </Link>
             ),
           }}
