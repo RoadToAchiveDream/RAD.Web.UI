@@ -49,7 +49,7 @@ export function AuthLayout({ sx, children, header }: AuthLayoutProps) {
                 This is an info Alert.
               </Alert>
             ),
-            leftArea: <Logo />,
+            // leftArea: <Logo />,
             rightArea: (
               <Link
                 component={RouterLink}
@@ -57,7 +57,7 @@ export function AuthLayout({ sx, children, header }: AuthLayoutProps) {
                 color="inherit"
                 sx={{ typography: 'subtitle2' }}
               >
-                Need help?
+                Нужна помощь?
               </Link>
             ),
           }}

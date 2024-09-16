@@ -24,26 +24,28 @@ export function SignInView() {
     router.push('/');
   }, [router]);
 
+  const RedrectToSignUp = useCallback(() => {
+    router.push('/sign-up');
+  }, [router]);
+
   const renderForm = (
     <Box display="flex" flexDirection="column" alignItems="flex-end">
       <TextField
         fullWidth
         name="email"
-        label="Email address"
-        defaultValue="hello@gmail.com"
+        label="Адрес электронной почты"
+        defaultValue=""
+        required
         InputLabelProps={{ shrink: true }}
         sx={{ mb: 3 }}
       />
 
-      <Link variant="body2" color="inherit" sx={{ mb: 1.5 }}>
-        Forgot password?
-      </Link>
-
       <TextField
         fullWidth
         name="password"
-        label="Password"
-        defaultValue="@demo1234"
+        label="Пароль"
+        defaultValue=""
+        required
         InputLabelProps={{ shrink: true }}
         type={showPassword ? 'text' : 'password'}
         InputProps={{
@@ -58,6 +60,10 @@ export function SignInView() {
         sx={{ mb: 3 }}
       />
 
+      <Link variant="body2" color="inherit" sx={{ mb: 1.5 }}>
+        Забыли пароль?
+      </Link>
+
       <LoadingButton
         fullWidth
         size="large"
@@ -66,7 +72,7 @@ export function SignInView() {
         variant="contained"
         onClick={handleSignIn}
       >
-        Sign in
+        Продолжить
       </LoadingButton>
     </Box>
   );
@@ -74,13 +80,7 @@ export function SignInView() {
   return (
     <>
       <Box gap={1.5} display="flex" flexDirection="column" alignItems="center" sx={{ mb: 5 }}>
-        <Typography variant="h5">Sign in</Typography>
-        <Typography variant="body2" color="text.secondary">
-          Don’t have an account?
-          <Link variant="subtitle2" sx={{ ml: 0.5 }}>
-            Get started
-          </Link>
-        </Typography>
+        <Typography variant="h5">Войти</Typography>
       </Box>
 
       {renderForm}
@@ -90,20 +90,17 @@ export function SignInView() {
           variant="overline"
           sx={{ color: 'text.secondary', fontWeight: 'fontWeightMedium' }}
         >
-          OR
+          Или
         </Typography>
       </Divider>
 
       <Box gap={1} display="flex" justifyContent="center">
-        <IconButton color="inherit">
-          <Iconify icon="logos:google-icon" />
-        </IconButton>
-        <IconButton color="inherit">
-          <Iconify icon="eva:github-fill" />
-        </IconButton>
-        <IconButton color="inherit">
-          <Iconify icon="ri:twitter-x-fill" />
-        </IconButton>
+        <Typography variant="body2" color="text.secondary">
+          Ещё нет аккаунта?
+          <Link variant="subtitle2" sx={{ ml: 0.5 }} onClick={RedrectToSignUp}>
+            Создать аккаунт
+          </Link>
+        </Typography>
       </Box>
     </>
   );

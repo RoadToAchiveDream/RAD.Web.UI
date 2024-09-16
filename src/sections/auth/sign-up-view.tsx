@@ -36,6 +36,7 @@ export function SignUpView() {
         name="firstname"
         label="Имя"
         defaultValue=""
+        required
         InputLabelProps={{ shrink: true }}
         sx={{ mb: 3 }}
       />
@@ -44,6 +45,7 @@ export function SignUpView() {
         name="lastname"
         label="Фамилия"
         defaultValue=""
+        required
         InputLabelProps={{ shrink: true }}
         sx={{ mb: 3 }}
       />
@@ -52,6 +54,16 @@ export function SignUpView() {
         name="email"
         label="Адрес электронной почты"
         defaultValue=""
+        required
+        InputLabelProps={{ shrink: true }}
+        sx={{ mb: 3 }}
+      />
+      <TextField
+        fullWidth
+        name="email"
+        label="Номер телефона"
+        defaultValue=""
+        required
         InputLabelProps={{ shrink: true }}
         sx={{ mb: 3 }}
       />
@@ -60,6 +72,7 @@ export function SignUpView() {
         name="password"
         label="Новый пароль"
         defaultValue=""
+        required
         InputLabelProps={{ shrink: true }}
         type={showPassword ? 'text' : 'password'}
         InputProps={{
@@ -78,6 +91,7 @@ export function SignUpView() {
         name="confirmPassword"
         label="Подтвердите пароль"
         defaultValue=""
+        required
         InputLabelProps={{ shrink: true }}
         type={showConfirmPassword ? 'text' : 'password'} // Use the separate state here
         InputProps={{
@@ -109,7 +123,6 @@ export function SignUpView() {
     <>
       <Box gap={1.5} display="flex" flexDirection="column" alignItems="center" sx={{ mb: 5 }}>
         <Typography variant="h5">Создать аккаунт</Typography>
-        
       </Box>
 
       {renderForm}
@@ -118,12 +131,13 @@ export function SignUpView() {
         <Typography
           variant="overline"
           sx={{ color: 'text.secondary', fontWeight: 'fontWeightMedium' }}
-        />
-           
+        >
+          Или
+        </Typography>
       </Divider>
 
       <Box gap={1} display="flex" justifyContent="center">
-      <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary">
           Уже есть аккаунт?
           <Link variant="subtitle2" sx={{ ml: 0.5 }} onClick={RedirectToSignIn}>
             Войти
